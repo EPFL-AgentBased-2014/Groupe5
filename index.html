@@ -41,6 +41,12 @@ A l'aide de cela, nous pouvons analyser l'influence de différents paramètres s
 <h1>
 <a name="ii-objectifs-et-hypoth%C3%A8ses" class="anchor" href="#ii-objectifs-et-hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>II. Objectifs et hypothèses</h1>
 
+<p>Nous avons pour objectif de trouver le meilleur dosage entre immunisation et traitement avec un coût
+ (???? et un temps ????)
+minimum pour une ville de taille donnée.</p>
+
+<p>!!!!!!!!!!! mettre le calcul pour cout immuni et trait !!!!!!</p>
+
 <h1>
 <a name="iii-m%C3%A9thodes-et-proc%C3%A9dures" class="anchor" href="#iii-m%C3%A9thodes-et-proc%C3%A9dures"><span class="octicon octicon-link"></span></a>III. Méthodes et procédures</h1>
 
@@ -77,7 +83,10 @@ En augmentant le niveau de traitement, on diminue la durée de vie du virus.</p>
 <h4>
 <a name="relations-spatiales" class="anchor" href="#relations-spatiales"><span class="octicon octicon-link"></span></a>Relations spatiales</h4>
 
-<p>Les agents sont donc les virus qui peuvent infecter la population et la rendre malade. Un virus se trouvant en relation avec une personne à 1 probabilité sur 10 (alpha= 0.1) de la rendre malade. Une personne malade à 1 probabilité sur 100 (beta=0.01) de produire un nouveau virus.</p>
+<p>Les agents sont donc les virus qui peuvent infecter la population et la rendre malade. Un virus se trouvant en relation avec une personne a 1 chance sur 10 (alpha= 0.1) de la rendre malade (noir-&gt;jaune). Après un temps donné, les personnes malades deviennent immunisées pour un temps défini par le niveau d'immunisation (jaune-&gt;blanc). Une personne malade a 1 chance sur 100 (beta=0.01) de produire un nouveau virus.</p>
+
+<p>Le compteur des coûts nous permet de voir s'il est plus avantageux d'investir dans une immunisation de la population ou dans un traitement des eaux 
+( ????? suivant la taille de la ville ??????).</p>
 
 <h3>
 <a name="processus" class="anchor" href="#processus"><span class="octicon octicon-link"></span></a>Processus</h3>

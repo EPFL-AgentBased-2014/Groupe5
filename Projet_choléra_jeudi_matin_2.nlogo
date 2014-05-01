@@ -79,7 +79,11 @@ to go
   
   ;; Viruses start by moving and contaminating the "healthy" population. Afterwards, the functions immunize, mutate and contagion activate themselves.
   ;; The viruses start dying after 300 ticks so that the epidemic can develop.
+<<<<<<< HEAD
   ;; Once the infected population is zero, the program stops.
+=======
+  ;; Once the infected population is zero or 10000 ticks have passed, the program stops.
+>>>>>>> 61d02ac2959d27d76dbfe9e200f6d95ce81252d1
   tick
   ask viruses[ 
     move
@@ -253,8 +257,13 @@ city_size
 city_size
 0
 6
+<<<<<<< HEAD
 4
 2
+=======
+0
+1
+>>>>>>> 61d02ac2959d27d76dbfe9e200f6d95ce81252d1
 1
 NIL
 HORIZONTAL
@@ -285,7 +294,7 @@ treatment-level
 treatment-level
 1
 3
-1
+2
 1
 1
 NIL

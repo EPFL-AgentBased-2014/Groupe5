@@ -3,7 +3,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; cost is a global variable
-globals [ cost ]
+globals [ cost 
+  treatment-level]
 
 ;; lifetime-patch is a patch variable
 patches-own [ lifetime-patch ]
@@ -26,6 +27,7 @@ to setup
   clear-all
   random-seed 10005
   reset-ticks
+  set treatment-level 1
   initialize
   
 end
@@ -35,6 +37,12 @@ end
 ;;;;;;;;;;;;;;;;;;
 
 to initialize
+  
+  let city_size 0
+  
+  if Size_of_the_city = " Small " [ set city_size 0 ]
+  if Size_of_the_city = " Medium " [ set city_size 4 ]
+  if Size_of_the_city = " Big " [ set city_size 6 ]
   
   ;; Houses are situated in green patches, black represents the "healthy" population and blue the water.
   ask patches[
@@ -155,8 +163,11 @@ end
 ;;;;;;;;;;;;;;;;;;;;
 
 to stop-virus
-  
-  ;; The virus dies after some time. If the water treatment level is increased, then the virus dies more quickly.
+  set treatment-level 1
+  if water-treatment = " None " [ set treatment-level 1 ]
+  if water-treatment = " Medium " [ set treatment-level 2 ]
+  if water-treatment = " High " [ set treatment-level 3 ]
+  ;; The virus dies after some time naturally ( 100 ticks ). If the water treatment level is increased, then the virus dies more quickly.
   ask viruses with [color = black] [
     set lifetime lifetime + 1
     if lifetime > (100 / (treatment-level * treatment-level)) [die]
@@ -169,6 +180,11 @@ end
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to immunize
+  
+  let immunity 1
+  if population-prescription = " None " [ set immunity 1 ]
+  if population-prescription =  " Water-bottles " [ set immunity 2 ]
+  if population-prescription = " Vaccines " [ set immunity 3 ]
   
   ;; Yellow turns into white after some time. White represents the "immune" population.
   ;; This immunity has a price.
@@ -187,6 +203,11 @@ end
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to mutate
+  
+  let immunity 1
+  if population-prescription = " None " [ set immunity 1 ]
+  if population-prescription =  " Water-bottles " [ set immunity 2 ]
+  if population-prescription = " Vaccines " [ set immunity 3 ]
   
   ;; White turns into black after some time. The population is "healthy" but not "immune" anymore.
   ask patches with [ pcolor = white ][
@@ -244,21 +265,6 @@ NIL
 NIL
 1
 
-SLIDER
-8
-117
-195
-150
-city_size
-city_size
-0
-6
-4
-2
-1
-NIL
-HORIZONTAL
-
 BUTTON
 108
 10
@@ -275,21 +281,6 @@ NIL
 NIL
 NIL
 1
-
-SLIDER
-5
-212
-194
-245
-treatment-level
-treatment-level
-1
-3
-1
-1
-1
-NIL
-HORIZONTAL
 
 MONITOR
 767
@@ -352,21 +343,6 @@ beta
 1
 0
 Number
-
-SLIDER
-5
-298
-198
-331
-immunity
-immunity
-1
-3
-2
-1
-1
-NIL
-HORIZONTAL
 
 MONITOR
 1077
@@ -438,6 +414,36 @@ NIL
 11
 0.0
 1
+
+CHOOSER
+10
+120
+148
+165
+Size_of_the_City
+Size_of_the_City
+"Small" " Medium " " Big "
+0
+
+CHOOSER
+10
+206
+148
+251
+water-treatment
+water-treatment
+" None " " Medium " " High "
+0
+
+CHOOSER
+7
+292
+152
+337
+population-prescription
+population-prescription
+" None " " Water-bottles " " Vaccines "
+0
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -564,9 +570,6 @@ Line -2674135 false 150 180 150 255
 Line -2674135 false 120 150 45 150
 Line -2674135 false 180 150 270 150
 Line -2674135 false 135 165 75 225
-Line -2674135 false 180 135 180 135
-Line -2674135 false 180 135 180 135
-Line -2674135 false 165 120 165 120
 Line -2674135 false 165 135 225 60
 Line -2674135 false 135 135 45 75
 Line -2674135 false 165 165 240 225

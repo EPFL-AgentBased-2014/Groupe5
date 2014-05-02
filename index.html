@@ -48,7 +48,7 @@ A l'aide de cela, nous pouvons analyser l'influence de différents paramètres s
 <p>Nous avons pour objectif de trouver le meilleur dosage entre immunisation et traitement avec un coût
 minimum pour une ville de taille donnée.</p>
 
-<p>En tant que première hypothèse, nous pensions que la taille de la ville influencerait les coûts pour éradiquer la maladie, soit qu'une grandes villes aurait des coûts plus importants qu'une petite ville.</p>
+<p>En tant que première hypothèse, nous pensions que la taille de la ville influencerait les coûts pour éradiquer la maladie, soit qu'une grande ville aurait des coûts plus importants qu'une petite ville.</p>
 
 <h1>
 <a name="iii-m%C3%A9thodes-et-proc%C3%A9dures" class="anchor" href="#iii-m%C3%A9thodes-et-proc%C3%A9dures"><span class="octicon octicon-link"></span></a>III. Méthodes et procédures</h1>
@@ -64,7 +64,7 @@ minimum pour une ville de taille donnée.</p>
 <ul>
 <li><p>Le territoire, qui n'a aucune interaction avec les autres patches, est en vert.</p></li>
 <li><p>L'eau se trouvant dans les canalisations est en bleu.</p></li>
-<li><p>La population peut se trouver en trois états différents. Seine, patches noirs. Malade, patches jaunes. Immunisée, patches blancs.</p></li>
+<li><p>La population peut se trouver en trois états différents: saine (patches noirs), contaminée (patches jaunes) et immunisée (patches blancs).</p></li>
 </ul><h4>
 <a name="mobiles" class="anchor" href="#mobiles"><span class="octicon octicon-link"></span></a>Mobiles</h4>
 
@@ -77,7 +77,7 @@ minimum pour une ville de taille donnée.</p>
 
 <ul>
 <li><p>D'une part, il est possible d'<em>immuniser</em> la population pour un certain temps.
-Il y a trois niveaux d'immunité, plus le niveau est haut, plus la personne restera immunisée longtemps. Le premier niveau représente l'immunité naturelle de la population. Le deuxième niveau représente l'immunité de la population si on leur fournit des bouteille d'eau, et aurait donc moins de contact avec de l'eau contenant des virus. Et le dernier niveau indique une population vaccinée et donc résistante au virus pendant un certain temps, puis le virus mute donc la population n'est à nouveau plus immunisée.</p></li>
+Il y a trois niveaux d'immunité. Plus le niveau est haut, plus vite la personne s'immunisera et plus longtemps aussi elle le restera. Le premier niveau représente l'immunité naturelle de la population. Le deuxième niveau représente l'immunité de la population si on leur fournit des bouteille d'eau, et aurait donc moins de contact avec de l'eau contenant des virus. Et le dernier niveau indique une population vaccinée et donc résistante au virus pendant un temps plus important. Enfin, après plus ou moins de temps, la population mutera et deviendra à nouveau vulnérable.</p></li>
 <li><p>Ensuite, il est aussi possible d'agir sur la qualité de l'eau en y ajoutant un <em>traitement</em>.
 En augmentant le niveau de traitement, on diminue la durée de vie du virus.</p></li>
 </ul><p>De plus un compteur enregistre les coûts de l'immunisation de la population et du traitement des eaux.</p>

@@ -139,6 +139,7 @@ end
 
 to contagion
   
+  ;; Each patch wich is contaminated may release a virus with probability beta.
   let bluePatch one-of patches with [pcolor = blue]
   if any? patches with [pcolor = yellow] [
     set bluePatch one-of patches with [pcolor = blue and count neighbors4 with [ pcolor = yellow ] > 0 ]]

@@ -35,18 +35,17 @@
 <h1>
 <a name="i-introduction--int%C3%A9r%C3%AAt-de-la-recherche" class="anchor" href="#i-introduction--int%C3%A9r%C3%AAt-de-la-recherche"><span class="octicon octicon-link"></span></a>I. Introduction / Intérêt de la recherche</h1>
 
-<p>Le modèle que nous avons créé schématise la propagation d'un virus hydrique au sein d'une ville. Ce virus se répand dans les canalisations et infecte la population via la consommation des eaux infectées.
-A l'aide de cela, nous pouvons analyser l'influence de différents paramètres sur le temps et les coûts de l'épidémie. Les paramètres sont la taille de la ville, le niveau de traitement des eaux et l'immunisation la population.</p>
+<p>Le modèle que nous avons créé modélise la propagation d'un virus hydrique au sein d'une ville. Ce virus se répand dans les canalisations et infecte la population via la consommation des eaux infectées.
+A l'aide de cela, nous pouvons analyser l'influence de différents paramètres sur la durée de l'épidémie et les coûts pour l'éradiquer. Les paramètres que l'observateur peut modifier sont la taille de la ville, le niveau de traitement des eaux et les mesures prises pour immuniser la population.</p>
 
-<p>Ce modèle est particulièrement intéressant du fait qu'il est concret et d'actualité. Il nous permet également d'avoir une vision globale de l'épidémie.</p>
+<p>Ce modèle est particulièrement intéressant du fait qu'il est concret et d'actualité. Il nous permet de vérifier l'effet, l'efficacité et le coût des mesures prises par la ville en question contre l'épidémie.</p>
 
 <h1>
 <a name="ii-objectifs-et-hypoth%C3%A8ses" class="anchor" href="#ii-objectifs-et-hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>II. Objectifs et hypothèses</h1>
 
-<p>Nous avons pour objectif de trouver le meilleur dosage entre immunisation et traitement avec un coût
-minimum pour une ville de taille donnée.</p>
+<p>Nous avons pour objectif de trouver les mesures prises par la ville qui permettent de sauver la population, donc éradiquer l'épidémie, avec un coût minimum pour une ville de taille donnée.</p>
 
-<p>En tant que première hypothèse, nous pensions que la taille de la ville influencerait les coûts pour éradiquer la maladie, soit qu'une grande ville aurait des coûts plus importants qu'une petite ville.
+<p>En tant que première hypothèse, nous pensions que la taille de la ville influencerait les coûts pour éradiquer la maladie, c’est-à-dire qu'une grande ville aurait des coûts plus importants qu'une petite ville.
 Nous pensions également que le virus serait plus facile à éradiquer dans une petite ville par rapport à une grande ville. Nous nous sommes aussi posé la question suivante, quel paramètre est le plus efficace pour éradiquer le virus? Et quelle serait la combinaison de paramètres la plus efficace ? Et la plus rentable ?</p>
 
 <h1>
@@ -61,13 +60,13 @@ Nous pensions également que le virus serait plus facile à éradiquer dans une 
 <p>Nous avons trois éléments fixes dans notre modèle. </p>
 
 <ul>
-<li><p>Le territoire, qui n'a aucune interaction avec les autres patches, est en vert.</p></li>
+<li><p>Le territoire, qui n'a aucune interaction avec les autres patches, est en vert, sert essentiellement de décoration pour l'interface graphique.</p></li>
 <li><p>L'eau se trouvant dans les canalisations est en bleu.</p></li>
 <li><p>La population peut se trouver en trois états différents: saine (patches noirs), contaminée (patches jaunes) et immunisée (patches blancs).</p></li>
 </ul><h4>
 <a name="mobiles" class="anchor" href="#mobiles"><span class="octicon octicon-link"></span></a>Mobiles</h4>
 
-<p>Les éléments mobiles sont les virus, qui se répandent aléatoirement dans l'eau, et sont représentés par des points noirs.</p>
+<p>Les éléments mobiles sont les virus, qui se répandent aléatoirement dans l'eau, et sont représentés par des <em>sputniks rouges</em>.</p>
 
 <h4>
 <a name="variables" class="anchor" href="#variables"><span class="octicon octicon-link"></span></a>Variables</h4>
@@ -76,9 +75,9 @@ Nous pensions également que le virus serait plus facile à éradiquer dans une 
 
 <ul>
 <li><p>D'une part, il est possible d'<em>immuniser</em> la population pour un certain temps.
-Il y a trois niveaux d'immunité. Plus le niveau est haut, plus vite la personne s'immunisera et plus longtemps aussi elle le restera. Le premier niveau représente l'immunité naturelle de la population.
-Le deuxième niveau représente l'immunité de la population si on leur fournit des bouteilles d'eau, et donc le contact avec de l'eau contenant des virus sera moindre mais pas nul. Effectivement, bien qu'on ne boive plus de l'eau du robinet, on en fait toujours usage pour des raisons sanitaires (douches, etc.). 
-Le dernier niveau indique une population vaccinée et donc résistante au virus pendant un temps plus important.
+Il y a trois niveaux d'immunité, <em>None</em>, <em>Water-bottles</em>, <em>Vaccines</em>. Plus la prescription est sévère, plus vite la personne s'immunisera et plus longtemps aussi elle le restera. Le premier niveau représente l'immunité naturelle de la population.
+Le deuxième niveau représente la résistance de la population si on leur fournit des bouteilles d'eau, le contact avec de l'eau contenant des virus sera moindre mais pas nul et donc la personne risque d'être re-contaminée. Effectivement, bien qu'on ne boive plus de l'eau du robinet, on en fait toujours usage pour des raisons sanitaires (douches, etc.). 
+Le dernier niveau indique la prescription de vaccins. La population vaccinée est immunisée et donc résistante au virus pendant un temps important. Par contre les virus subissent souvent des mutations donc la population au bout d'un certain temps redevient contaminable.
 Enfin, le temps d'immunité dépend de la mesure prise: il sera plus long pour une prescription de vaccins que pour une distribution de bouteilles d'eau.</p></li>
 <li><p>Ensuite, il est aussi possible d'agir sur la qualité de l'eau en y ajoutant un <em>traitement</em>.
 En augmentant le niveau de traitement, on diminue la durée de vie du virus.</p></li>

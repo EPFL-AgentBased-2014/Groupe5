@@ -445,6 +445,23 @@ population-prescription
 " None " " Water-bottles " " Vaccines "
 0
 
+BUTTON
+110
+57
+173
+90
+NIL
+Go
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
 @#$#@#$#@
 ## WHAT IS IT?
 

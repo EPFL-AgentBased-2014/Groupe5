@@ -83,7 +83,7 @@ En augmentant le niveau de traitement, on diminue la durée de vie du virus.</p>
 <h4>
 <a name="relations-spatiales" class="anchor" href="#relations-spatiales"><span class="octicon octicon-link"></span></a>Relations spatiales</h4>
 
-<p>Les agents sont donc les virus qui peuvent infecter la population et la rendre malade. Un virus se trouvant en relation avec une personne a 1 chance sur 10 (alpha = 0.1) de la rendre malade (noir-&gt;jaune). Une personne malade a 1 chance sur 100 (beta = 0.01) de produire un nouveau virus. Après un certain temps défini par le niveau d'immunisation (jaune-&gt;blanc), les personnes malades deviennent immunisées. </p>
+<p>Les agents sont donc les virus qui peuvent infecter la population et la rendre malade. Un virus se trouvant en relation avec une personne a 1 chance sur 10 (alpha = 0.1) de la rendre malade (noir-&gt;jaune). Une personne malade a 1 chance sur 100 (beta = 0.01) de produire un nouveau virus. Après un certain temps défini par le niveau d'immunisation, l'état des personnes passe de <em>contaminé</em> à <em>immunisé</em> (jaune-&gt;blanc). </p>
 
 <p>Le compteur des coûts nous permet de voir s'il est plus avantageux d'investir dans une immunisation de la population ou dans un traitement des eaux suivant la taille de la ville.</p>
 
@@ -164,7 +164,7 @@ Cela s'explique très simplement: au début, le nombre de virus est plus faible 
 <h2>
 <a name="proposition-de-d%C3%A9veloppement" class="anchor" href="#proposition-de-d%C3%A9veloppement"><span class="octicon octicon-link"></span></a>Proposition de développement</h2>
 
-<p>Si nous avions la possibilité de continuer notre modèle nous pourrions imaginer un nouvel état à nos patches population. En y ajoutant l'état de mort, nous pourrions voir avec quels paramètres la ville tendra à disparaitre ou a guérir. Qui de l'homme ou du virus survivra ?  </p>
+<p>Si nous avions la possibilité de continuer notre modèle, nous pourrions imaginer un nouvel état à nos patches population. En y ajoutant l'état de mort, nous pourrions voir avec quels paramètres la ville tendra à disparaitre ou a guérir. Qui de l'homme ou du virus survivra ?  </p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/EPFL-AgentBased-2014">EPFL-AgentBased-2014</a></p>

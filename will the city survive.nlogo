@@ -193,7 +193,7 @@ to immunize
     set lifetime-patch lifetime-patch + 1
     if lifetime-patch > 200 / immunity [
       set pcolor white
-      set cost cost + 1 * (immunity * immunity )
+      set cost cost + 1 * ((immunity - 1) * immunity )
       ]
   ]
   
